@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>إعدادات الراوتر المتقدمة</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f3f3;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      background: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    input, select, button {
+      margin: 10px 0;
+      padding: 10px;
+      width: 100%;
+      font-size: 16px;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>مدير إعدادات الراوتر</h1>
+    <input type="text" id="ip" placeholder="IP الراوتر">
+    <select id="type">
+      <option value="tenda">Tenda</option>
+      <option value="tplink">TP-Link</option>
+    </select>
+    <input type="text" id="username" placeholder="اسم المستخدم">
+    <input type="password" id="password" placeholder="كلمة المرور">
+    <button onclick="login()">تسجيل الدخول</button>
+  </div>
+
+  <script>
+    function login() {
+      const ip = document.getElementById("ip").value;
+      const type = document.getElementById("type").value;
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      if (ip && username && password) {
+        alert("✅ تم تسجيل الدخول وهميًا!");
+        const ssid = prompt("أدخل اسم الشبكة الجديد:");
+        const wifi_pass = prompt("أدخل كلمة مرور جديدة:");
+        if (ssid && wifi_pass) {
+          alert("✅ تم تغيير إعدادات الواي فاي (وهميًا).");
+        } else {
+          alert("❌ لم يتم إدخال بيانات كافية.");
+        }
+      } else {
+        alert("❌ الرجاء تعبئة جميع الحقول.");
+      }
+    }
+  </script>
+</body>
+</html>
